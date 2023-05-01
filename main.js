@@ -22,6 +22,11 @@ const servers = {
     {
       urls: ['stun:stun1.l.google.com:19302', 'stun:stun2.l.google.com:19302'],
     },
+    {
+      urls: ['turn:webrtc101.metered.live'],
+      username: '01730689c2911deefff611ba',
+      credential: '67013903ce0273ac7e43bbdfd070421d1687'
+    },
   ],
   iceCandidatePoolSize: 10,
 };
