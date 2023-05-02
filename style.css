@@ -1,19 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap'); */
+@import url('https://fonts.cdnfonts.com/css/harry-potter');
+
 
 body {
-  font-family: 'Syne Mono', monospace;
+  font-family: 'Harry Potter', sans-serif;
+  /*font-family: 'Syne Mono', monospace;*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #ffffff;
   margin: 80px 10px;
+  background-color: #000000;
 }
 
 video {
   width: 40vw;
   height: 30vw;
   margin: 2rem;
-  background: #2c3e50;
+  background: #033d22;
 }
 
 .videos {

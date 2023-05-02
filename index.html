@@ -2,31 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" href="internet.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WebRTC Demo</title>
+    <title>CS553 Project</title>
   </head>
   <body>
-    <h2>1. Start your Webcam</h2>
+    <h1>Peer to Peer video chat application</h1>
     <div class="videos">
       <span>
-        <h3>Local Stream</h3>
+        <h2>You</h2>
         <video id="webcamVideo" autoplay playsinline muted></video>
       </span>
       <span>
-        <h3>Remote Stream</h3>
+        <h2>Not You</h2>
         <video id="remoteVideo" autoplay playsinline></video>
       </span>
-
-
     </div>
 
-    <button id="webcamButton">Start webcam</button>
-    <h2>2. Create a new Call</h2>
-    <button id="callButton" disabled>Create Call (offer)</button>
+    Click this button once you're nice and pretty: <button id="webcamButton">Start Camera and microphone</button>
+    <h2>Host a call</h2>
+    <button id="callButton" disabled>Create Call</button>
 
-    <h2>3. Join a Call</h2>
-    <p>Answer the call from a different browser window or device</p>
+    <h2>Join a Call</h2>
+    <p>You can either create or join a call</p>
     
     <input id="callInput" />
     <button id="answerButton" disabled>Answer</button>
