@@ -145,7 +145,7 @@ callButton.onclick = async () =>
 // Answering calls
 answerButton.onclick = async () =>
 {
-  const callId = callCode.value;
+  const callId = callInput.value;
   const callDoc = firestore.collection('calls').doc(callId);
   const answerCandidates = callDoc.collection('answerCandidates');
   const offerCandidates = callDoc.collection('offerCandidates');
