@@ -19,8 +19,10 @@ if (!firebase.apps.length)
   firebase.initializeApp(firebaseConfig);
 }
 
+// Firestore object
 const firestore = firebase.firestore();
 
+// STUN servers used
 const servers = 
 {
   iceServers: 
@@ -32,7 +34,7 @@ const servers =
   iceCandidatePoolSize: 10,
 };
 
-// Set up peer connection and steam variables
+// Set up peer connection and stream variables
 const peerConnection = new RTCPeerConnection(servers);
 let localStream = null;
 let remoteStream = null;
@@ -40,14 +42,18 @@ let remoteStream = null;
 // Get HTML objects
 const webcamButton = document.getElementById('webcamButton');
 const webcamVideo = document.getElementById('webcamVideo');
+const videoButtonOn = document.getElementById('videoButtonOn');
+const videoButtonOff = document.getElementById('videoButtonOff');
+const audioButtonOn = document.getElementById('audioButtonOn');
+const audioButtonOff = document.getElementById('audioButtonOff');
 const callButton = document.getElementById('callButton');
 const callInput = document.getElementById('callInput');
+const callCode = document.getElementById('callCode');
 const answerButton = document.getElementById('answerButton');
 const remoteVideo = document.getElementById('remoteVideo');
 const hangupButton = document.getElementById('hangupButton');
 
 // Initial setup for video and microphone resources
-
 webcamButton.onclick = async () =>
 {
   localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
@@ -73,8 +79,14 @@ webcamButton.onclick = async () =>
 
   callButton.disabled = false;
   answerButton.disabled = false;
+  videoButtonOff.disabled = false;
+  audioButtonOff.disabled = false;
+
   webcamButton.disabled = true;
 };
+
+// Functionality to handle camera on/off and audio mute/unmute
+
 
 // Creating an offer
 callButton.onclick = async () =>
@@ -84,7 +96,7 @@ callButton.onclick = async () =>
   const offerCandidates = callDoc.collection('offerCandidates');
   const answerCandidates = callDoc.collection('answerCandidates');
 
-  callInput.value = callDoc.id;
+  callCode.value = callDoc.id;
 
   // Save to database - candidates for call
   peerConnection.onicecandidate = (event) =>
@@ -133,7 +145,7 @@ callButton.onclick = async () =>
 // Answering calls
 answerButton.onclick = async () =>
 {
-  const callId = callInput.value;
+  const callId = callCode.value;
   const callDoc = firestore.collection('calls').doc(callId);
   const answerCandidates = callDoc.collection('answerCandidates');
   const offerCandidates = callDoc.collection('offerCandidates');

@@ -7,11 +7,18 @@
     <title>CS553 Project</title>
   </head>
   <body>
-    <h1>Peer to Peer video chat application</h1>
+    <h1>I solemnly swear that I am up to no good!</h1>
+    <button id="webcamButton">Start the magical devices that see and hear you!</button>
     <div class="videos">
       <span>
         <h2>You</h2>
         <video id="webcamVideo" autoplay playsinline muted></video>
+        <br>
+        <button id="videoButtonOn" disabled>Video On</button>
+        <button id="videoButtonOff" disabled>Video Off</button>
+        <br>
+        <button id="audioButtonOn" disabled>Unmute</button>
+        <button id="audioButtonOff" disabled>Mute</button>
       </span>
       <span>
         <h2>Not You</h2>
@@ -19,19 +26,22 @@
       </span>
     </div>
 
-    Click this button once you're nice and pretty: <button id="webcamButton">Start Camera and microphone</button>
-    <h2>Host a call</h2>
-    <button id="callButton" disabled>Create Call</button>
-
-    <h2>Join a Call</h2>
-    <p>You can either create or join a call</p>
+    <!-- <br> -->
+    <!-- <h2>Feeling lonely? Send this code to your friend (by owl, of course!)</h2> -->
+    <h2>Feeling lonely?</h2>
+    Send an owl to your friend with this secret code: <button id="callButton" disabled>Accio Secret Code!</button>
+    <br><input id = "callCode"/>
+    <h2>Or wait, do you have the secret from the chambers?</h2>
+    <p>Enter the secret code your owl just delivered: </p>
     
     <input id="callInput" />
-    <button id="answerButton" disabled>Answer</button>
+    <button id="answerButton" disabled>Connect</button>
 
-    <h2>4. Hangup</h2>
+    <!-- <h2>Michief Managed:</h2> -->
 
-    <button id="hangupButton" disabled>Hangup</button>
+    <!-- <br><br><font color=red>Michief Managed: </font><button id="hangupButton" disabled background-color="red">Hangup</button> -->
+
+    <br><br><button id="hangupButton" class = "button" disabled>Michief Managed!</button>
 
     <script type="module" src="/main.js"></script>
 
