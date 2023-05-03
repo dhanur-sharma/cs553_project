@@ -59,6 +59,7 @@ webcamButton.onclick = async () =>
   localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
   remoteStream = new MediaStream();
 
+  // console.log(localStream)
   // Add local stream to peer connection
   localStream.getTracks().forEach((track) =>
   {
@@ -81,11 +82,64 @@ webcamButton.onclick = async () =>
   answerButton.disabled = false;
   videoButtonOff.disabled = false;
   audioButtonOff.disabled = false;
+  callCode.disabled = false;
+  callInput.disabled = false;
 
   webcamButton.disabled = true;
 };
 
 // Functionality to handle camera on/off and audio mute/unmute
+videoButtonOn.onclick = async() =>
+{
+  // localStream = await navigator.mediaDevices.getUserMedia({ video: true });
+  webcamVideo.srcObject = localStream;
+
+  videoButtonOff.disabled = false;
+  videoButtonOn.disabled = true;
+}
+
+videoButtonOff.onclick = async() =>
+{
+  // localStream.getVideoTracks().forEach((track) =>
+  // {
+  //   peerConnection.removeTrack(track);
+  // });
+
+  // localStream.muted = true;
+  webcamVideo.srcObject = null;
+
+  peerConnection.enabled = false;
+  // // Add local stream to peer connection
+  // localStream.getTracks().forEach((track) =>
+  // {
+  //   peerConnection.removeTrack(track);
+  // });
+
+  // // Set video stream from remote stream
+  // peerConnection.ontrack = (event) =>
+  // {
+  //   event.streams[0].getTracks().forEach((track) =>
+  //   {
+  //     remoteStream.addTrack(track);
+  //   });
+  // };
+
+  videoButtonOn.disabled = false;
+  videoButtonOff.disabled = true;
+}
+
+audioButtonOn.onclick = async() =>
+{
+  audioButtonOff.disabled = false;
+  audioButtonOn.disabled = true;
+}
+
+audioButtonOff.onclick = async() =>
+{
+  
+  audioButtonOn.disabled = false;
+  audioButtonOff.disabled = true;
+}
 
 
 // Creating an offer
@@ -183,11 +237,13 @@ answerButton.onclick = async () =>
       }
     });
   });
+  hangupButton.disabled = false;
 };
 
 // Hangup functionality
 hangupButton.onclick = async () =>
 {
+  // peerConnection.enabled = false;
   peerConnection.close();
   webcamVideo.srcObject = null;
   remoteVideo.srcObject = null;
