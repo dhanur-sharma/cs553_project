@@ -102,7 +102,7 @@ We use the WebRTC-Internal API to collect and analyze the metrics over the call 
 
 ## Features
 
-- Call themselves do not use internet
+- Calls themselves do not use internet
 - Cross platform/device calls
 - A magical call experience
 
