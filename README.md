@@ -60,7 +60,7 @@ You should be able to see what your webcam sees and are now ready to use the app
 
 
 - Remote device:
-While accessing the application through the network on another device, there are an additional step that need to be taken to circumvent the security protocols that web browsers have in place.
+While accessing the application through the network on another device, there is an additional step that need to be taken to circumvent the security protocols that web browsers have in place.
 We're listing down the specific steps for Google Chrome/ Brave, but this can be repeated on any browser by following the browser specific commands.
 
 In the interest of time and scope of this project, we are limiting the use of this application on Google Chrome/ Brave and have thus tested it on the same.
