@@ -100,6 +100,18 @@ We use the WebRTC-Internal API to collect and analyze the metrics over the call 
 - Rutgers campus network (Busch campus)
 - Rutgers inter-campus network (College Ave to Busch campus)
 
+In order to source these metrics once the call is in progress, paste the following in the address bar of the same browser in order to view the metrics being gathered:
+
+- Chrome:
+```
+chrome://webrtc-internals/
+```
+
+- Brave:
+```
+brave://webrtc-internals/
+```
+
 ## Features
 
 - Calls themselves do not use internet
