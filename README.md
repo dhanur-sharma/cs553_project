@@ -41,6 +41,7 @@ This will download the code for the application.
 In order to install the application, navigate to the *cs553_project* directory that has been cloned and run the following commands on the terminal:
 
 ```bash
+cd cs553_project
 npm install
 npm run dev
 ```
