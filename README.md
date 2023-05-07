@@ -1,7 +1,7 @@
 
-# Project Title
+# Project for Design of Internet Services (CS 553) - Harry Potter themed P2P video chat application via WebRTC
 
-Project for Design of Internet Services (CS 553) - Harry Potter themed P2P video chat application via WebRTC.
+
 
 ## Introduction
 
